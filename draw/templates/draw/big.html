@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>P4 Drawing</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
+
+    <style type="text/css">
+    </style>
+
+</head>
+<body>
+    <!-- You may change the dimensions of this canvas -->
+    <canvas id="myCanvas" width="750px" height="750px"></canvas>
+</body>
+<script>
+
+    // setting up the canvas and one paper tool
+    var canvas = document.getElementById('myCanvas');
+    paper.setup(canvas);
+    var tool = new paper.Tool();
+    
+    var uid = Date.now() % 10000;
+    const map1 = new Map();
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const size = urlParams.get('size');
+    var path = new paper.Path();
+    // used https://www.sitepoint.com/get-url-parameters-with-javascript/ to get these url parameters
+    
+
+    // getting the URL (you may want to use for Exercise 3)
+    var url = window.location.href;
+
+    var socket = new WebSocket(
+        'ws://' + window.location.host + '/ws/draw');
+
+    tool.onMouseMove = function(event) { //http://paperjs.org/reference/tool/ path examples
+       path.add(event.point);
+       console.log("asd");
+       // You may need to add code here if you want to pass any other information.
+       socket.send("{\"x\" : " + event.point.x + ", \"y\" : " + event.point.y + ", \"uid\" : " + uid + "}" );
+       
+       
+    }
+
+    socket.onmessage = function(receivedMessage) {
+        var received = JSON.parse(receivedMessage.data);
+        console.log("Received: " + JSON.stringify(received));
+        // You will probably want to add some code here to draw more lines.
+        if(size !== 'large') {
+            let str = JSON.stringify(received);
+            let userid = str.substring(str.lastIndexOf(":") + 1, str.length - 1);
+            let p = new paper.Point(parseInt(str.substring(str.indexOf(":") + 1, str.indexOf(","))), parseInt(str.substring(str.indexOf("y") + 3, str.lastIndexOf(","))));
+            if(uid == userid) {
+                if(map1.has(userid)) {
+                map1.get(userid).add(p);
+            } else {
+                var newPath = new paper.Path();
+                newPath.strokeColor = '#' + userid;
+                map1.set(userid, newPath);
+                
+            }  
+            }
+            
+        } else {
+            let str = JSON.stringify(received);
+            let userid = str.substring(str.lastIndexOf(":") + 1, str.length - 1);
+            let p = new paper.Point(parseInt(str.substring(str.indexOf(":") + 1, str.indexOf(","))), parseInt(str.substring(str.indexOf("y") + 3, str.lastIndexOf(","))));
+            
+            if(map1.has(userid)) {
+                map1.get(userid).add(p);
+            } else {
+                var newPath = new paper.Path();
+                newPath.strokeColor = '#' + userid;
+                map1.set(userid, newPath);
+                
+            }  
+        }
+    }
+
+    socket.onclose = function(e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+
+</script>
+</html>
