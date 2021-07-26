@@ -1,4 +1,4 @@
-
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -139,28 +139,34 @@
   <body>
     
 <header class="site-header sticky-top py-1">
-  <div class="maestroLine container d-flex flex-column flex-md-row justify-content-between">
-        Maestro: Hit it!!
-  </div>
+    <div class="row">
+        <div class="col maestroLine container d-flex flex-column flex-md-row justify-content-between">
+            Maestro: Hit it!!
+        </div>
+        <div class="col bg-dark container d-flex flex-column flex-md-row justify-content-between">
+            Some sync feature
+        </div>
+    </div>
+  
 </header>
 
 <main>
 
 <div class="half " style="display:flex">
-    <img class="musicSheetA" id="musicSheet1A" style="width:1200px" height="1350px" src="https://drive.google.com/uc?export=view&id=1Xr-UWVaiMWkFY6PLuwV-wQ6u_Q3Lmg69">
-    <img id="orchestraLayout1B" style="width:1200px" height="1350px" src="https://drive.google.com/uc?export=view&id=1JW3hFmy5foT7eVsXVdCSYY_1G5UFwlSO">
+    <img class="musicSheetA" id="musicSheet1A" style="width:1420px" height="1350px" src="https://drive.google.com/uc?export=view&id=1Xr-UWVaiMWkFY6PLuwV-wQ6u_Q3Lmg69">
+    <img id="orchestraLayout1B" style="width:1420px" height="1350px" src="https://drive.google.com/uc?export=view&id=1JW3hFmy5foT7eVsXVdCSYY_1G5UFwlSO">
 </div>
 <div class="half " style="display:flex">
-    <img class="musicSheetA" id="musicSheet2A" style="width:1200px" height="1350px" src="https://drive.google.com/uc?export=view&id=17BuSFDEi9pmwbqyrD-QCt2zoKBEwhEh5">
-    <img id="orchestraLayout2B" style="width:1200px" height="1350px" src="https://drive.google.com/uc?export=view&id=1JW3hFmy5foT7eVsXVdCSYY_1G5UFwlSO">
+    <img class="musicSheetA" id="musicSheet2A" style="width:1420px" height="1350px" src="https://drive.google.com/uc?export=view&id=17BuSFDEi9pmwbqyrD-QCt2zoKBEwhEh5">
+    <img id="orchestraLayout2B" style="width:1420px" height="1350px" src="https://drive.google.com/uc?export=view&id=1JW3hFmy5foT7eVsXVdCSYY_1G5UFwlSO">
 </div>
 <div class="half " style="display:flex">
-    <img class="musicSheetA" id="musicSheet3A" style="width:1200px" height="1350px" src="https://drive.google.com/uc?export=view&id=1YjZMBjj3giowRCBx-scdpLXhrzt75Y17">
-    <img id="orchestraLayout3B" style="width:1200px" height="1350px" src="https://drive.google.com/uc?export=view&id=1JW3hFmy5foT7eVsXVdCSYY_1G5UFwlSO">
+    <img class="musicSheetA" id="musicSheet3A" style="width:1420px" height="1350px" src="https://drive.google.com/uc?export=view&id=1YjZMBjj3giowRCBx-scdpLXhrzt75Y17">
+    <img id="orchestraLayout3B" style="width:1420px" height="1350px" src="https://drive.google.com/uc?export=view&id=1JW3hFmy5foT7eVsXVdCSYY_1G5UFwlSO">
 </div>
 <div class="half " style="display:flex">
-    <img class="musicSheetA" id="musicSheet4A" style="width:1200px" height="1350px" src="https://drive.google.com/uc?export=view&id=1MiMuSVoV5TlGnM0_LDLF26HOsnPl5xpC">
-    <img id="orchestraLayout4B" style="width:1200px" height="1350px" src="https://drive.google.com/uc?export=view&id=1JW3hFmy5foT7eVsXVdCSYY_1G5UFwlSO">
+    <img class="musicSheetA" id="musicSheet4A" style="width:1420px" height="1350px" src="https://drive.google.com/uc?export=view&id=1MiMuSVoV5TlGnM0_LDLF26HOsnPl5xpC">
+    <img id="orchestraLayout4B" style="width:1420px" height="1350px" src="https://drive.google.com/uc?export=view&id=1JW3hFmy5foT7eVsXVdCSYY_1G5UFwlSO">
 </div>
 </main>
 
@@ -179,7 +185,7 @@
     </div>
     <div class="col col-md">
         <button class="navBar1Button" id="chatButton1">
-            <i class="far fa-comment-dots fa-3x"></i>
+            <i class="fas fa-comment-dots fa-3x" id="chat"></i>
         </button>
         
     </div>
@@ -299,9 +305,13 @@
     
     function changeMusicSheet(number) {
         let newSheetA = document.getElementById("musicSheet" + number + "A");
+        let newSheetB = document.getElementById("orchestraLayout" + number + "B");
         let currSheetA = document.getElementById("musicSheet" + currMusicSheet + "A");
+        let currSheetB = document.getElementById("orchestraLayout" + currMusicSheet + "B");
         currSheetA.style.display = "none";
+        currSheetB.style.display = "none";
         newSheetA.style.display = "inline";
+        newSheetB.style.display = "inline";
         currMusicSheet = number;
     }
 
@@ -323,10 +333,13 @@
         }
     }
     document.getElementById("muteButton1").addEventListener("click", function() {
-        $("#mic").toggleClass('fa-microphone fa-microphone-slash fa-3x')
+        $("#mic").toggleClass('fa-microphone fa-microphone-slash')
     });
     document.getElementById("videoButton1").addEventListener("click", function() {
         $("#vid").toggleClass('fa-video fa-video-slash')
+    });
+    document.getElementById("chatButton1").addEventListener("click", function() {
+        $("#chat").toggleClass('fa-comment-dots fa-comment-slash')
     });
     
     document.getElementById("navigationBarNumber1").addEventListener("click", function() {
