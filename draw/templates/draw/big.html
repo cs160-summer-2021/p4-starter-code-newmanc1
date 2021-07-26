@@ -1,4 +1,4 @@
-
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -179,7 +179,7 @@
     </div>
     <div class="col col-md">
         <button class="navBar1Button" id="chatButton1">
-            <i class="far fa-comment-dots fa-3x"></i>
+            <i class="fas fa-comment-dots fa-3x" id="chat"></i>
         </button>
         
     </div>
@@ -299,9 +299,13 @@
     
     function changeMusicSheet(number) {
         let newSheetA = document.getElementById("musicSheet" + number + "A");
+        let newSheetB = document.getElementById("orchestraLayout" + number + "B");
         let currSheetA = document.getElementById("musicSheet" + currMusicSheet + "A");
+        let currSheetB = document.getElementById("orchestraLayout" + currMusicSheet + "B");
         currSheetA.style.display = "none";
+        currSheetB.style.display = "none";
         newSheetA.style.display = "inline";
+        newSheetB.style.display = "inline";
         currMusicSheet = number;
     }
 
@@ -323,10 +327,13 @@
         }
     }
     document.getElementById("muteButton1").addEventListener("click", function() {
-        $("#mic").toggleClass('fa-microphone fa-microphone-slash fa-3x')
+        $("#mic").toggleClass('fa-microphone fa-microphone-slash')
     });
     document.getElementById("videoButton1").addEventListener("click", function() {
         $("#vid").toggleClass('fa-video fa-video-slash')
+    });
+    document.getElementById("chatButton1").addEventListener("click", function() {
+        $("#chat").toggleClass('fa-comment-dots fa-comment-slash')
     });
     
     document.getElementById("navigationBarNumber1").addEventListener("click", function() {
