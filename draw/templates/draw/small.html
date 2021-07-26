@@ -30,26 +30,137 @@
 
         }
 
-        .musicSheet {
+        .musicSheetA {
             margin-top: -80vh;
+            padding-top: 0px;
+            height: 80vh;
             width: 49vw;
+            padding-bottom: 0px;
         }
 
-        .musicSheet2 {
+        .musicSheetB {
             margin-top: -80vh;
+            padding-top: 0px;
+            height: 80vh;
             width: 49vw;
             margin-left: 51vw;
+            padding-bottom: 0px;
+        }
+
+        #musicSheet1A {
+            visibility: visible;
+        }
+        #musicSheet1B {
+            visibility: visible;
+        }
+
+        #musicSheet2A {
+            visibility: hidden;
+        }
+        #musicSheet2B {
+            visibility: hidden;
+        }
+
+        #musicSheet3A {
+            visibility: hidden;
+        }
+        #musicSheet3B {
+            visibility: hidden;
+        }
+
+        #musicSheet4A {
+            visibility: hidden;
+        }
+        #musicSheet4B {
+            visibility: hidden;
         }
 
         .navBar {
             height:10vh;
         }
 
-        .navBarButton {
+        .navBar1Button {
             height: 8vh;
             width: 8vw;
             margin-left: 2vw;
             margin-right: 2vw;
+        }
+        .navBar2Button {
+            height: 8vh;
+            width: 8vw;
+            margin-left: 2vw;
+            margin-right: 2vw;
+        }
+        .navBar3Button {
+            height: 8vh;
+            width: 8vw;
+            margin-left: 2vw;
+            margin-right: 2vw;
+        }
+        .navBar4Button {
+            height: 8vh;
+            width: 8vw;
+            margin-left: 2vw;
+            margin-right: 2vw;
+        }
+
+        #navBarBox {
+            position: relative;
+            height: 10vh;
+            width: 12vw;
+            background-color: lightblue;
+            visibility: hidden;
+        }
+
+        #musicSheetBox {
+            position: relative;
+            height: 10vh;
+            width: 12vw;
+            background-color: lightblue;
+            visibility: hidden;
+        }
+
+        .musicBoxNumber {
+            border: none;
+            background-color: none;
+            color: none;
+            font-size: 22px;
+        }
+        
+        .navigationBarNumber {
+            border: none;
+            background-color: none;
+            color: none;
+            font-size: 22px;
+        }
+
+        #musicSheetButton1 {
+            background-color: lightpink;
+        }
+
+        #navBarBoxButton1 {
+            background-color: lightgreen;
+        }
+        #musicSheetButton2 {
+            background-color: lightpink;
+        }
+
+        #navBarBoxButton2 {
+            background-color: lightgreen;
+        }
+        #musicSheetButton3 {
+            background-color: lightpink;
+        }
+
+        #navBarBoxButton3 {
+            background-color: lightgreen;
+        }
+        #musicSheetButton4 {
+            background-color: lightpink;
+        }
+
+        #navBarBoxButton4 {
+            background-color: lightgreen;
         }
     </style>
 
@@ -61,20 +172,59 @@
         Maestro: Hit it!!
     </div>
     <div class="verticalLine"></div>
-    <img class="musicSheet" src="https://drive.google.com/uc?export=view&id=1Xr-UWVaiMWkFY6PLuwV-wQ6u_Q3Lmg69">
-    <img class="musicSheet2" src="https://drive.google.com/uc?export=view&id=1Xr-UWVaiMWkFY6PLuwV-wQ6u_Q3Lmg69">
+    <img class="musicSheetA" id="musicSheet1A" src="https://drive.google.com/uc?export=view&id=1Xr-UWVaiMWkFY6PLuwV-wQ6u_Q3Lmg69">
+    <img class="musicSheetB" id="musicSheet1B" src="https://drive.google.com/uc?export=view&id=1Xr-UWVaiMWkFY6PLuwV-wQ6u_Q3Lmg69">
+    <img class="musicSheetA" id="musicSheet2A" src="https://drive.google.com/uc?export=view&id=17BuSFDEi9pmwbqyrD-QCt2zoKBEwhEh5">
+    <img class="musicSheetB" id="musicSheet2B" src="https://drive.google.com/uc?export=view&id=17BuSFDEi9pmwbqyrD-QCt2zoKBEwhEh5">
+    <img class="musicSheetA" id="musicSheet3A" src="https://drive.google.com/uc?export=view&id=1YjZMBjj3giowRCBx-scdpLXhrzt75Y17">
+    <img class="musicSheetB" id="musicSheet3B" src="https://drive.google.com/uc?export=view&id=1YjZMBjj3giowRCBx-scdpLXhrzt75Y17">
+    <img class="musicSheetA" id="musicSheet4A" src="https://drive.google.com/uc?export=view&id=1MiMuSVoV5TlGnM0_LDLF26HOsnPl5xpC">
+    <img class="musicSheetB" id="musicSheet4B" src="https://drive.google.com/uc?export=view&id=1MiMuSVoV5TlGnM0_LDLF26HOsnPl5xpC">
+
     <hr>
-    <div class="navBar">
-        <button class="navBarButton" id="muteButton">
+    
+    <div class="navBar1">
+        <button class="navBar1Button" id="muteButton1">
 
         </button>
-        <button class="navBarButton" id="videoButton">
+        <button class="navBar1Button" id="videoButton1">
             
         </button>
-        <button class="navBarButton" id="chatButton">
+        <button class="navBar1Button" id="chatButton1">
             
         </button>
-        <button class="navBarButton" id="musicSheetButton">
+        <span id="musicSheetBox">
+            <button class="musicBoxNumber" id="musicBoxNumber1">
+                1
+            </button>
+            <button class="musicBoxNumber" id="musicBoxNumber2">
+                2
+            </button>
+            <button class="musicBoxNumber" id="musicBoxNumber3">
+                3
+            </button>
+            <button class="musicBoxNumber" id="musicBoxNumber4">
+                4
+            </button>
+        </span>
+        <button class="navBar1Button" id="musicSheetButton1">
+           
+        </button>
+        <span id="navBarBox">
+            <button class="navigationBarNumber" id="navigationBarNumber1">
+                1
+            </button>
+            <button class="navigationBarNumber" id="navigationBarNumber2">
+                2
+            </button>
+            <button class="navigationBarNumber" id="navigationBarNumber3">
+                3
+            </button>
+            <button class="navigationBarNumber" id="navigationBarNumber4">
+                4
+            </button>
+        </span>
+        <button class="navBar1Button" id="navBarBoxButton1">
             
         </button>
     </div>
@@ -96,7 +246,8 @@
     const size = urlParams.get('size');
     var path = new paper.Path();
     // used https://www.sitepoint.com/get-url-parameters-with-javascript/ to get these url parameters
-    
+    var currMusicSheet = 1;
+    var currNavBar = 1;
 
     // getting the URL (you may want to use for Exercise 3)
     var url = window.location.href;
@@ -151,6 +302,91 @@
     socket.onclose = function(e) {
         console.error('Chat socket closed unexpectedly');
     };
+    function changeMusicSheet(number) {
+        let newSheetA = document.getElementById("musicSheet" + number + "A");
+        let newSheetB = document.getElementById("musicSheet" + number + "B");
+        let currSheetA = document.getElementById("musicSheet" + currMusicSheet + "A");
+        let currSheetB = document.getElementById("musicSheet" + currMusicSheet + "B");
+        currSheetA.style.visibility = "hidden";
+        currSheetB.style.visibility = "hidden";
+        newSheetA.style.visibility = "visible";
+        newSheetB.style.visibility = "visible";
+        currMusicSheet = number;
+    }
+
+    function changeNavBar(number) {
+        let newNav = document.getElementById("navBar" + number);
+        let currNav = document.getElementById("navBar" + currNavBar);
+        currNav.style.visibility = "hidden";
+        newNav.style.visibility = "visible";
+        
+        currNavBar = number;
+    }
+
+    function toggleVisibility(id) {
+        let obj = document.getElementById(id);
+        if(obj.style.visibility === "visible") {
+            obj.style.visibility = "hidden";
+        } else {
+            obj.style.visibility = "visible";
+        }
+    }
+    document.getElementById("navigationBarNumber1").addEventListener("click", function() {
+        changeNavBar("1");
+        toggleVisibility("navBarBox")      
+    });
+    document.getElementById("navigationBarNumber2").addEventListener("click", function() {
+        changeNavBar("2");
+        toggleVisibility("navBarBox")      
+    });
+    document.getElementById("navigationBarNumber3").addEventListener("click", function() {
+        changeNavBar("3");
+        toggleVisibility("navBarBox")      
+    });
+    document.getElementById("navigationBarNumber4").addEventListener("click", function() {
+        changeNavBar("4");
+        toggleVisibility("navBarBox")      
+    })
+    document.getElementById("musicBoxNumber1").addEventListener("click", function() {
+        changeMusicSheet("1");
+        toggleVisibility("musicSheetBox");      
+    });
+    document.getElementById("musicBoxNumber2").addEventListener("click", function() {
+        changeMusicSheet("2");
+        toggleVisibility("musicSheetBox");      
+    });
+    document.getElementById("musicBoxNumber3").addEventListener("click", function() {
+        changeMusicSheet("3");
+        toggleVisibility("musicSheetBox");      
+    });
+    document.getElementById("musicBoxNumber4").addEventListener("click", function() {
+        changeMusicSheet("4");
+        toggleVisibility("musicSheetBox");      
+    });
+    document.getElementById("musicSheetButton1").addEventListener("click", function() {
+        toggleVisibility("musicSheetBox");      
+    });
+    document.getElementById("navBarBoxButton1").addEventListener("click", function() {
+        toggleVisibility("navBarBox");      
+    });
+    document.getElementById("musicSheetButton2").addEventListener("click", function() {
+        toggleVisibility("musicSheetBox");      
+    });
+    document.getElementById("navBarBoxButton2").addEventListener("click", function() {
+        toggleVisibility("navBarBox");      
+    });
+    document.getElementById("musicSheetButton3").addEventListener("click", function() {
+        toggleVisibility("musicSheetBox");      
+    });
+    document.getElementById("navBarBoxButton3").addEventListener("click", function() {
+        toggleVisibility("navBarBox");      
+    });
+    document.getElementById("musicSheetButton4").addEventListener("click", function() {
+        toggleVisibility("musicSheetBox");      
+    });
+    document.getElementById("navBarBoxButton4").addEventListener("click", function() {
+        toggleVisibility("navBarBox");      
+    });
 
 </script>
 </html>
