@@ -2,7 +2,17 @@
 <!doctype html>
 <html lang="en">
   <head>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/product/">
+    <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
+
+    <script src="https://kit.fontawesome.com/f2c150d561.js"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -10,25 +20,9 @@
     <meta name="generator" content="Hugo 0.84.0">
     <title>Product example · Bootstrap v5.0</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/product/">
 
-    <script src="https://kit.fontawesome.com/f2c150d561.js"
-        crossorigin="anonymous">
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    
 
-    <!-- Bootstrap core CSS -->
-<link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <!-- Favicons -->
-<link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
-<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
 <meta name="theme-color" content="#7952b3">
 
 
@@ -141,7 +135,6 @@
 
     
     <!-- Custom styles for this template -->
-    <link href="product.css" rel="stylesheet">
   </head>
   <body>
     
@@ -176,7 +169,6 @@
     <div class="col col-md">
         <button class="navBar1Button" id="muteButton1">
             <i class="fas fa-microphone fa-3x"  id="mic"></i>
-
         </button>
     </div>
     <div class="col col-md">
@@ -233,9 +225,9 @@
 </nav>
 
 
-    <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <script>
 
-    // setting up the canvas and one paper tool
+        // setting up the canvas and one paper tool
     var canvas = document.getElementById('myCanvas');
     paper.setup(canvas);
     var tool = new paper.Tool();
@@ -309,9 +301,7 @@
         let newSheetA = document.getElementById("musicSheet" + number + "A");
         let currSheetA = document.getElementById("musicSheet" + currMusicSheet + "A");
         currSheetA.style.display = "none";
-        currSheetB.style.display = "none";
         newSheetA.style.display = "inline";
-        newSheetB.style.display = "inline";
         currMusicSheet = number;
     }
 
@@ -333,7 +323,7 @@
         }
     }
     document.getElementById("muteButton1").addEventListener("click", function() {
-        $("#mic").toggleClass('fa-microphone fa-microphone-slash')
+        $("#mic").toggleClass('fa-microphone fa-microphone-slash fa-3x')
     });
     document.getElementById("videoButton1").addEventListener("click", function() {
         $("#vid").toggleClass('fa-video fa-video-slash')
@@ -395,8 +385,6 @@
     document.getElementById("navBarBoxButton4").addEventListener("click", function() {
         toggleVisibility("navBarBox");      
     });
-    
-    
     </script>
 
       
