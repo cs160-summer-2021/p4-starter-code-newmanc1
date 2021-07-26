@@ -18,11 +18,11 @@
     <style type="text/css">
         /* iphone 12 dimensions: 1170x2532 */
         .maestroLine {
-            height: 55px;
+            height: 35px;
             width: 500px; 
             background-color: pink;
             font-family: Didot;
-            font-size: 30px;
+            font-size: 26px;
 
         }
         
@@ -38,17 +38,19 @@
         }
 
         .musicSheetA {
-            height: 600px;
+            height: 470px;
+            width: 575px;
             margin-right: -300px;
             padding-top: 0px;
             padding-bottom: 0px;
         }
 
         .musicSheetB {
-            height: 600px;
+            height: 470px;
+            width: 575px;
             padding-top: 0px;
         
-            margin-left: 350px;
+            margin-left: 300px;
             padding-bottom: 0px;
         }
 
@@ -86,7 +88,10 @@
             display: none;
         }
         .navBar {
+            position: relative;
             height:60px;
+            top: -8px;
+            
             
         }
         #navBar1 {
@@ -109,26 +114,26 @@
         .navBar1Button {
             height: 40px;
             width: 40px;
-            margin-left: 20px;
-            margin-right: 20px;
+            margin-left: 50px;
+            margin-right: 50px;
         }
         .navBar2Button {
             height: 60px;
             width: 60px;
-            margin-left: 30px;
-            margin-right: 30px;
+            margin-left: 40px;
+            margin-right: 40px;
         }
         .navBar3Button {
             height: 40px;
             width: 40px;
-            margin-left: 25px;
-            margin-right: 25px;
+            margin-left: 60px;
+            margin-right: 60px;
         }
         .navBar4Button {
             height: 60px;
             width: 60px;
-            margin-left: 35px;
-            margin-right: 35px;
+            margin-left: 60px;
+            margin-right: 60px;
         }
 
         .navBarBox {
@@ -198,7 +203,7 @@
 <body>
     <!-- You may change the dimensions of this canvas -->
     <!-- <canvas id="myCanvas" width="750px" height="750px"></canvas> -->
-    <div class="maestroLine">
+    <div class="maestroLine" id="maestroMessage">
         Maestro: Hit it!!
     </div>
     <div class="verticalLine"></div>
@@ -224,8 +229,6 @@
     </div>
     
     
-
-    <hr>
     
     <!-- 5 buttons, smaller icons-->
     <div class="navBar" id="navBar1">
@@ -453,38 +456,15 @@
     }
 
     socket.onmessage = function(receivedMessage) {
-        var received = JSON.parse(receivedMessage.data);
-        console.log("Received: " + JSON.stringify(received));
+        var received = receivedMessage;
+        console.log("Received: " + received);
+        console.log("Received: " + received.data);
         // You will probably want to add some code here to draw more lines.
-        if(size !== 'large') {
-            let str = JSON.stringify(received);
-            let userid = str.substring(str.lastIndexOf(":") + 1, str.length - 1);
-            let p = new paper.Point(parseInt(str.substring(str.indexOf(":") + 1, str.indexOf(","))), parseInt(str.substring(str.indexOf("y") + 3, str.lastIndexOf(","))));
-            if(uid == userid) {
-                if(map1.has(userid)) {
-                map1.get(userid).add(p);
-            } else {
-                var newPath = new paper.Path();
-                newPath.strokeColor = '#' + userid;
-                map1.set(userid, newPath);
-                
-            }  
-            }
-            
-        } else {
-            let str = JSON.stringify(received);
-            let userid = str.substring(str.lastIndexOf(":") + 1, str.length - 1);
-            let p = new paper.Point(parseInt(str.substring(str.indexOf(":") + 1, str.indexOf(","))), parseInt(str.substring(str.indexOf("y") + 3, str.lastIndexOf(","))));
-            
-            if(map1.has(userid)) {
-                map1.get(userid).add(p);
-            } else {
-                var newPath = new paper.Path();
-                newPath.strokeColor = '#' + userid;
-                map1.set(userid, newPath);
-                
-            }  
+        if(received.data.substring(0, 7) === "Maestro") {
+            console.log("ads");
+            document.getElementById("maestroMessage").innerHTML = received.data;
         }
+        
     }
 
     socket.onclose = function(e) {
@@ -522,28 +502,32 @@
         }
     }
     document.getElementById("muteButton1").addEventListener("click", function() {
-        $("#mic1").toggleClass('fa-microphone fa-microphone-slash')
+        $("#mic1").toggleClass('fa-microphone fa-microphone-slash');
     });
     document.getElementById("videoButton1").addEventListener("click", function() {
-        $("#vid1").toggleClass('fa-video fa-video-slash')
+        $("#vid1").toggleClass('fa-video fa-video-slash');
+        socket.send("toggle video" + uid);
     });
     document.getElementById("muteButton2").addEventListener("click", function() {
-        $("#mic2").toggleClass('fa-microphone fa-microphone-slash')
+        $("#mic2").toggleClass('fa-microphone fa-microphone-slash');
     });
     document.getElementById("videoButton2").addEventListener("click", function() {
-        $("#vid2").toggleClass('fa-video fa-video-slash')
+        $("#vid2").toggleClass('fa-video fa-video-slash');
+        socket.send("toggle video" + uid);
     });
     document.getElementById("muteButton3").addEventListener("click", function() {
-        $("#mic3").toggleClass('fa-microphone fa-microphone-slash')
+        $("#mic3").toggleClass('fa-microphone fa-microphone-slash');
     });
     document.getElementById("videoButton3").addEventListener("click", function() {
-        $("#vid3").toggleClass('fa-video fa-video-slash')
+        $("#vid3").toggleClass('fa-video fa-video-slash');
+        socket.send("toggle video" + uid);
     });
     document.getElementById("muteButton4").addEventListener("click", function() {
-        $("#mic4").toggleClass('fa-microphone fa-microphone-slash')
+        $("#mic4").toggleClass('fa-microphone fa-microphone-slash');
     });
     document.getElementById("videoButton4").addEventListener("click", function() {
-        $("#vid4").toggleClass('fa-video fa-video-slash')
+        $("#vid4").toggleClass('fa-video fa-video-slash');
+        socket.send("toggle video" + uid);
     });
     
     document.getElementById("navigationBar1Number1").addEventListener("click", function() {
