@@ -16,10 +16,14 @@
 
 
     <style type="text/css">
+        /* iphone 12 dimensions: 1170x2532 */
         .maestroLine {
-            height: 90px;
-            width: 300px; 
+            height: 55px;
+            width: 500px; 
             background-color: pink;
+            font-family: Didot;
+            font-size: 30px;
+
         }
         
         
@@ -34,14 +38,14 @@
         }
 
         .musicSheetA {
-            margin-top: 90px;
+            height: 600px;
             margin-right: -300px;
             padding-top: 0px;
             padding-bottom: 0px;
         }
 
         .musicSheetB {
-            margin-top: 90px;
+            height: 600px;
             padding-top: 0px;
         
             margin-left: 350px;
@@ -81,9 +85,25 @@
             
             display: none;
         }
-
         .navBar {
-            height:90px;
+            height:60px;
+            
+        }
+        #navBar1 {
+            
+            display: inline;
+        }
+        #navBar2 {
+            
+            display: none;
+        }
+        #navBar3 {
+            
+            display: none;
+        }
+        #navBar4 {
+            
+            display: none;
         }
 
         .navBar1Button {
@@ -111,21 +131,21 @@
             margin-right: 35px;
         }
 
-        #navBarBox {
+        .navBarBox {
             position: relative;
             
             height: 100px;
             width: 100px;
-            background-color: lightblue;
+           
             display: none;
         }
 
-        #musicSheetBox {
+        .musicSheetBox {
             position: relative;
             
             height: 100px;
             width: 100px;
-            background-color: lightblue;
+            
             display: none;
         }
 
@@ -144,32 +164,32 @@
         }
 
         #musicSheetButton1 {
-            background-color: lightpink;
+            background-color: none;
         }
 
         #navBarBoxButton1 {
-            background-color: lightgreen;
+            background-color: none;
         }
         #musicSheetButton2 {
-            background-color: lightpink;
+            background-color: none;
         }
 
         #navBarBoxButton2 {
-            background-color: lightgreen;
+            background-color: none;
         }
         #musicSheetButton3 {
-            background-color: lightpink;
+            background-color: none;
         }
 
         #navBarBoxButton3 {
-            background-color: lightgreen;
+            background-color: none;
         }
         #musicSheetButton4 {
-            background-color: lightpink;
+            background-color: none;
         }
 
         #navBarBoxButton4 {
-            background-color: lightgreen;
+            background-color: none;
         }
     </style>
     
@@ -207,51 +227,192 @@
 
     <hr>
     
-    
-    <div class="navBar1">
+    <!-- 5 buttons, smaller icons-->
+    <div class="navBar" id="navBar1">
         <button class="navBar1Button" id="muteButton1">
-            <i class="fas fa-microphone" id="mic"></i>
+            <i class="fas fa-microphone" id="mic1"></i>
             
 
         </button>
         <button class="navBar1Button" id="videoButton1">
-            <i class="fas fa-video" id="vid"></i>
+            <i class="fas fa-video" id="vid1"></i>
         </button>
         <button class="navBar1Button" id="chatButton1">
             <i class="far fa-comment-dots"></i>
         </button>
-        <span id="musicSheetBox">
-            <button class="musicBoxNumber" id="musicBoxNumber1">
+        <span class="musicSheetBox" id="musicSheetBox1">
+            <button class="musicBoxNumber" id="musicBox1Number1">
                 1
             </button>
-            <button class="musicBoxNumber" id="musicBoxNumber2">
+            <button class="musicBoxNumber" id="musicBox1Number2">
                 2
             </button>
-            <button class="musicBoxNumber" id="musicBoxNumber3">
+            <button class="musicBoxNumber" id="musicBox1Number3">
                 3
             </button>
-            <button class="musicBoxNumber" id="musicBoxNumber4">
+            <button class="musicBoxNumber" id="musicBox1Number4">
                 4
             </button>
         </span>
         <button class="navBar1Button" id="musicSheetButton1">
            <i class="fas fa-music"></i>
         </button>
-        <span id="navBarBox">
-            <button class="navigationBarNumber" id="navigationBarNumber1">
+        <span class="navBarBox" id="navBarBox1">
+            <button class="navigationBarNumber" id="navigationBar1Number1">
                 1
             </button>
-            <button class="navigationBarNumber" id="navigationBarNumber2">
+            <button class="navigationBarNumber" id="navigationBar1Number2">
                 2
             </button>
-            <button class="navigationBarNumber" id="navigationBarNumber3">
+            <button class="navigationBarNumber" id="navigationBar1Number3">
                 3
             </button>
-            <button class="navigationBarNumber" id="navigationBarNumber4">
+            <button class="navigationBarNumber" id="navigationBar1Number4">
                 4
             </button>
         </span>
         <button class="navBar1Button" id="navBarBoxButton1">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- 5 buttons, bigger icons-->
+    <div class="navBar" id="navBar2">
+        <button class="navBar2Button" id="muteButton2">
+            <i class="fas fa-microphone" id="mic2"></i>
+            
+
+        </button>
+        <button class="navBar2Button" id="videoButton2">
+            <i class="fas fa-video" id="vid2"></i>
+        </button>
+        <button class="navBar2Button" id="chatButton2">
+            <i class="far fa-comment-dots"></i>
+        </button>
+        <span class="musicSheetBox" id="musicSheetBox2">
+            <button class="musicBoxNumber" id="musicBox2Number1">
+                1
+            </button>
+            <button class="musicBoxNumber" id="musicBox2Number2">
+                2
+            </button>
+            <button class="musicBoxNumber" id="musicBox2Number3">
+                3
+            </button>
+            <button class="musicBoxNumber" id="musicBox2Number4">
+                4
+            </button>
+        </span>
+        <button class="navBar2Button" id="musicSheetButton2">
+           <i class="fas fa-music"></i>
+        </button>
+        <span class="navBarBox" id="navBarBox2">
+            <button class="navigationBarNumber" id="navigationBar2Number1">
+                1
+            </button>
+            <button class="navigationBarNumber" id="navigationBar2Number2">
+                2
+            </button>
+            <button class="navigationBarNumber" id="navigationBar2Number3">
+                3
+            </button>
+            <button class="navigationBarNumber" id="navigationBar2Number4">
+                4
+            </button>
+        </span>
+        <button class="navBar2Button" id="navBarBoxButton2">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- 4 buttons, smaller icons-->
+    <div class="navBar" id="navBar3">
+        <button class="navBar3Button" id="muteButton3">
+            <i class="fas fa-microphone" id="mic3"></i>
+            
+
+        </button>
+        <button class="navBar3Button" id="videoButton3">
+            <i class="fas fa-video" id="vid3"></i>
+        </button>
+        <span class="musicSheetBox" id="musicSheetBox3">
+            <button class="musicBoxNumber" id="musicBox3Number1">
+                1
+            </button>
+            <button class="musicBoxNumber" id="musicBox3Number2">
+                2
+            </button>
+            <button class="musicBoxNumber" id="musicBox3Number3">
+                3
+            </button>
+            <button class="musicBoxNumber" id="musicBox3Number4">
+                4
+            </button>
+        </span>
+        <button class="navBar3Button" id="musicSheetButton3">
+           <i class="fas fa-music"></i>
+        </button>
+        <span class="navBarBox" id="navBarBox3">
+            <button class="navigationBarNumber" id="navigationBar3Number1">
+                1
+            </button>
+            <button class="navigationBarNumber" id="navigationBar3Number2">
+                2
+            </button>
+            <button class="navigationBarNumber" id="navigationBar3Number3">
+                3
+            </button>
+            <button class="navigationBarNumber" id="navigationBar3Number4">
+                4
+            </button>
+        </span>
+        <button class="navBar3Button" id="navBarBoxButton3">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- 4 buttons, bigger icons-->
+    <div class="navBar" id="navBar4">
+        <button class="navBar4Button" id="muteButton4">
+            <i class="fas fa-microphone" id="mic4"></i>
+            
+
+        </button>
+        <button class="navBar4Button" id="videoButton4">
+            <i class="fas fa-video" id="vid4"></i>
+        </button>
+        <span class="musicSheetBox" id="musicSheetBox4">
+            <button class="musicBoxNumber" id="musicBox4Number1">
+                1
+            </button>
+            <button class="musicBoxNumber" id="musicBox4Number2">
+                2
+            </button>
+            <button class="musicBoxNumber" id="musicBox4Number3">
+                3
+            </button>
+            <button class="musicBoxNumber" id="musicBox4Number4">
+                4
+            </button>
+        </span>
+        <button class="navBar4Button" id="musicSheetButton4">
+           <i class="fas fa-music"></i>
+        </button>
+        <span class="navBarBox" id="navBarBox4">
+            <button class="navigationBarNumber" id="navigationBar4Number1">
+                1
+            </button>
+            <button class="navigationBarNumber" id="navigationBar4Number2">
+                2
+            </button>
+            <button class="navigationBarNumber" id="navigationBar4Number3">
+                3
+            </button>
+            <button class="navigationBarNumber" id="navigationBar4Number4">
+                4
+            </button>
+        </span>
+        <button class="navBar4Button" id="navBarBoxButton4">
             <i class="fas fa-bars"></i>
         </button>
     </div>
@@ -361,67 +522,181 @@
         }
     }
     document.getElementById("muteButton1").addEventListener("click", function() {
-        $("#mic").toggleClass('fa-microphone fa-microphone-slash')
+        $("#mic1").toggleClass('fa-microphone fa-microphone-slash')
     });
     document.getElementById("videoButton1").addEventListener("click", function() {
-        $("#vid").toggleClass('fa-video fa-video-slash')
+        $("#vid1").toggleClass('fa-video fa-video-slash')
+    });
+    document.getElementById("muteButton2").addEventListener("click", function() {
+        $("#mic2").toggleClass('fa-microphone fa-microphone-slash')
+    });
+    document.getElementById("videoButton2").addEventListener("click", function() {
+        $("#vid2").toggleClass('fa-video fa-video-slash')
+    });
+    document.getElementById("muteButton3").addEventListener("click", function() {
+        $("#mic3").toggleClass('fa-microphone fa-microphone-slash')
+    });
+    document.getElementById("videoButton3").addEventListener("click", function() {
+        $("#vid3").toggleClass('fa-video fa-video-slash')
+    });
+    document.getElementById("muteButton4").addEventListener("click", function() {
+        $("#mic4").toggleClass('fa-microphone fa-microphone-slash')
+    });
+    document.getElementById("videoButton4").addEventListener("click", function() {
+        $("#vid4").toggleClass('fa-video fa-video-slash')
     });
     
-    document.getElementById("navigationBarNumber1").addEventListener("click", function() {
+    document.getElementById("navigationBar1Number1").addEventListener("click", function() {
         changeNavBar("1");
-        toggleVisibility("navBarBox")      
+        toggleVisibility("navBarBox1")      
     });
-    document.getElementById("navigationBarNumber2").addEventListener("click", function() {
+    document.getElementById("navigationBar1Number2").addEventListener("click", function() {
         changeNavBar("2");
-        toggleVisibility("navBarBox")      
+        toggleVisibility("navBarBox1")      
     });
-    document.getElementById("navigationBarNumber3").addEventListener("click", function() {
+    document.getElementById("navigationBar1Number3").addEventListener("click", function() {
         changeNavBar("3");
-        toggleVisibility("navBarBox")      
+        toggleVisibility("navBarBox1")      
     });
-    document.getElementById("navigationBarNumber4").addEventListener("click", function() {
+    document.getElementById("navigationBar1Number4").addEventListener("click", function() {
         changeNavBar("4");
-        toggleVisibility("navBarBox")      
+        toggleVisibility("navBarBox1")      
+    });
+    document.getElementById("navigationBar2Number1").addEventListener("click", function() {
+        changeNavBar("1");
+        toggleVisibility("navBarBox2")      
+    });
+    document.getElementById("navigationBar2Number2").addEventListener("click", function() {
+        changeNavBar("2");
+        toggleVisibility("navBarBox2")      
+    });
+    document.getElementById("navigationBar2Number3").addEventListener("click", function() {
+        changeNavBar("3");
+        toggleVisibility("navBarBox2")      
+    });
+    document.getElementById("navigationBar2Number4").addEventListener("click", function() {
+        changeNavBar("4");
+        toggleVisibility("navBarBox2")      
+    });
+    document.getElementById("navigationBar3Number1").addEventListener("click", function() {
+        changeNavBar("1");
+        toggleVisibility("navBarBox3")      
+    });
+    document.getElementById("navigationBar3Number2").addEventListener("click", function() {
+        changeNavBar("2");
+        toggleVisibility("navBarBox3")      
+    });
+    document.getElementById("navigationBar3Number3").addEventListener("click", function() {
+        changeNavBar("3");
+        toggleVisibility("navBarBox3")      
+    });
+    document.getElementById("navigationBar3Number4").addEventListener("click", function() {
+        changeNavBar("4");
+        toggleVisibility("navBarBox3")      
+    });
+    document.getElementById("navigationBar4Number1").addEventListener("click", function() {
+        changeNavBar("1");
+        toggleVisibility("navBarBox4")      
     })
-    document.getElementById("musicBoxNumber1").addEventListener("click", function() {
+    document.getElementById("navigationBar4Number2").addEventListener("click", function() {
+        changeNavBar("2");
+        toggleVisibility("navBarBox4")      
+    })
+    document.getElementById("navigationBar4Number3").addEventListener("click", function() {
+        changeNavBar("3");
+        toggleVisibility("navBarBox4")      
+    })
+    document.getElementById("navigationBar4Number4").addEventListener("click", function() {
+        changeNavBar("4");
+        toggleVisibility("navBarBox4")      
+    })
+    document.getElementById("musicBox1Number1").addEventListener("click", function() {
         changeMusicSheet("1");
-        toggleVisibility("musicSheetBox");      
+        toggleVisibility("musicSheetBox1");      
     });
-    document.getElementById("musicBoxNumber2").addEventListener("click", function() {
+    document.getElementById("musicBox1Number2").addEventListener("click", function() {
         changeMusicSheet("2");
-        toggleVisibility("musicSheetBox");      
+        toggleVisibility("musicSheetBox1");      
     });
-    document.getElementById("musicBoxNumber3").addEventListener("click", function() {
+    document.getElementById("musicBox1Number3").addEventListener("click", function() {
         changeMusicSheet("3");
-        toggleVisibility("musicSheetBox");      
+        toggleVisibility("musicSheetBox1");      
     });
-    document.getElementById("musicBoxNumber4").addEventListener("click", function() {
+    document.getElementById("musicBox1Number4").addEventListener("click", function() {
         changeMusicSheet("4");
-        toggleVisibility("musicSheetBox");      
+        toggleVisibility("musicSheetBox1");      
+    });
+    document.getElementById("musicBox2Number1").addEventListener("click", function() {
+        changeMusicSheet("1");
+        toggleVisibility("musicSheetBox2");      
+    });
+    document.getElementById("musicBox2Number2").addEventListener("click", function() {
+        changeMusicSheet("2");
+        toggleVisibility("musicSheetBox2");      
+    });
+    document.getElementById("musicBox2Number3").addEventListener("click", function() {
+        changeMusicSheet("3");
+        toggleVisibility("musicSheetBox2");      
+    });
+    document.getElementById("musicBox2Number4").addEventListener("click", function() {
+        changeMusicSheet("4");
+        toggleVisibility("musicSheetBox2");      
+    });
+    document.getElementById("musicBox3Number1").addEventListener("click", function() {
+        changeMusicSheet("1");
+        toggleVisibility("musicSheetBox3");      
+    });
+    document.getElementById("musicBox3Number2").addEventListener("click", function() {
+        changeMusicSheet("2");
+        toggleVisibility("musicSheetBox3");      
+    });
+    document.getElementById("musicBox3Number3").addEventListener("click", function() {
+        changeMusicSheet("3");
+        toggleVisibility("musicSheetBox3");      
+    });
+    document.getElementById("musicBox3Number4").addEventListener("click", function() {
+        changeMusicSheet("4");
+        toggleVisibility("musicSheetBox3");      
+    });
+    document.getElementById("musicBox4Number1").addEventListener("click", function() {
+        changeMusicSheet("1");
+        toggleVisibility("musicSheetBox4");      
+    });
+    document.getElementById("musicBox4Number2").addEventListener("click", function() {
+        changeMusicSheet("2");
+        toggleVisibility("musicSheetBox4");      
+    });
+    document.getElementById("musicBox4Number3").addEventListener("click", function() {
+        changeMusicSheet("3");
+        toggleVisibility("musicSheetBox4");      
+    });
+    document.getElementById("musicBox4Number4").addEventListener("click", function() {
+        changeMusicSheet("4");
+        toggleVisibility("musicSheetBox4");      
     });
     document.getElementById("musicSheetButton1").addEventListener("click", function() {
-        toggleVisibility("musicSheetBox");      
+        toggleVisibility("musicSheetBox1");      
     });
     document.getElementById("navBarBoxButton1").addEventListener("click", function() {
-        toggleVisibility("navBarBox");      
+        toggleVisibility("navBarBox1");      
     });
     document.getElementById("musicSheetButton2").addEventListener("click", function() {
-        toggleVisibility("musicSheetBox");      
+        toggleVisibility("musicSheetBox2");      
     });
     document.getElementById("navBarBoxButton2").addEventListener("click", function() {
-        toggleVisibility("navBarBox");      
+        toggleVisibility("navBarBox2");      
     });
     document.getElementById("musicSheetButton3").addEventListener("click", function() {
-        toggleVisibility("musicSheetBox");      
+        toggleVisibility("musicSheetBox3");      
     });
     document.getElementById("navBarBoxButton3").addEventListener("click", function() {
-        toggleVisibility("navBarBox");      
+        toggleVisibility("navBarBox3");      
     });
     document.getElementById("musicSheetButton4").addEventListener("click", function() {
-        toggleVisibility("musicSheetBox");      
+        toggleVisibility("musicSheetBox4");      
     });
     document.getElementById("navBarBoxButton4").addEventListener("click", function() {
-        toggleVisibility("navBarBox");      
+        toggleVisibility("navBarBox4");      
     });
     
 
