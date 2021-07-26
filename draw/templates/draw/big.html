@@ -11,7 +11,12 @@
     <title>Product example · Bootstrap v5.0</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/product/">
-    
+
+    <script src="https://kit.fontawesome.com/f2c150d561.js"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     
 
     <!-- Bootstrap core CSS -->
@@ -42,10 +47,55 @@
         }
       }
 
-      .maestroLine {
+        .maestroLine {
             height: 90px;
             background-color: pink;
             font-size:xx-large;
+        }
+        .redLine {
+
+        }       
+
+        .musicSheetDiv {
+            
+        }
+
+        .musicSheetA {
+            
+        }
+
+        #musicSheet1A {
+            display: inline;
+        }
+        #orchestraLayout1B {
+            display: inline;
+        }
+
+        #musicSheet2A {
+            
+            display: none;
+        }
+        #orchestraLayout2B {
+            
+            display: none;
+        }
+
+        #musicSheet3A {
+            
+            display: none;
+        }
+        #orchestraLayout3B {
+            
+            display: none;
+        }
+
+        #musicSheet4A {
+            
+            display: none;
+        }
+        #orchestraLayout4B {
+            
+            display: none;
         }
 
         .navBar {
@@ -86,17 +136,7 @@
             display: none;
         }
 
-        .musicSheetDiv {
-            overflow: hidden;
-            width: 1200px;
-        }
-
-        .musicSheetA {
-            margin-top: 90px;
-            margin-right: -300px;
-            padding-top: 0px;
-            padding-bottom: 0px;
-        }
+        
     </style>
 
     
@@ -113,48 +153,186 @@
 
 <main>
 
-  <figure class="half" style="display:flex">
-    <img style="width:1200px" height="1350px" src="https://drive.google.com/uc?export=view&id=1MiMuSVoV5TlGnM0_LDLF26HOsnPl5xpC">
-    <img style="width:1200px" height="1350px" src="seating-chart.jpg">
-</figure>
+<div class="half " style="display:flex">
+    <img class="musicSheetA" id="musicSheet1A" style="width:1200px" height="1350px" src="https://drive.google.com/uc?export=view&id=1Xr-UWVaiMWkFY6PLuwV-wQ6u_Q3Lmg69">
+    <img id="orchestraLayout1B" style="width:1200px" height="1350px" src="https://drive.google.com/uc?export=view&id=1JW3hFmy5foT7eVsXVdCSYY_1G5UFwlSO">
+</div>
+<div class="half " style="display:flex">
+    <img class="musicSheetA" id="musicSheet2A" style="width:1200px" height="1350px" src="https://drive.google.com/uc?export=view&id=17BuSFDEi9pmwbqyrD-QCt2zoKBEwhEh5">
+    <img id="orchestraLayout2B" style="width:1200px" height="1350px" src="https://drive.google.com/uc?export=view&id=1JW3hFmy5foT7eVsXVdCSYY_1G5UFwlSO">
+</div>
+<div class="half " style="display:flex">
+    <img class="musicSheetA" id="musicSheet3A" style="width:1200px" height="1350px" src="https://drive.google.com/uc?export=view&id=1YjZMBjj3giowRCBx-scdpLXhrzt75Y17">
+    <img id="orchestraLayout3B" style="width:1200px" height="1350px" src="https://drive.google.com/uc?export=view&id=1JW3hFmy5foT7eVsXVdCSYY_1G5UFwlSO">
+</div>
+<div class="half " style="display:flex">
+    <img class="musicSheetA" id="musicSheet4A" style="width:1200px" height="1350px" src="https://drive.google.com/uc?export=view&id=1MiMuSVoV5TlGnM0_LDLF26HOsnPl5xpC">
+    <img id="orchestraLayout4B" style="width:1200px" height="1350px" src="https://drive.google.com/uc?export=view&id=1JW3hFmy5foT7eVsXVdCSYY_1G5UFwlSO">
+</div>
 </main>
 
 <nav class="container">
   <div class="row">
     <div class="col col-md">
         <button class="navBar1Button" id="muteButton1">
-            <i class="fas fa-microphone" id="mic"></i>
+            <i class="fas fa-microphone fa-3x"  id="mic"></i>
 
         </button>
     </div>
     <div class="col col-md">
         <button class="navBar1Button" id="videoButton1">
-            <i class="fas fa-video" id="vid"></i>
+            <i class="fas fa-video fa-3x" id="vid"></i>
         </button>
       
     </div>
     <div class="col col-md">
         <button class="navBar1Button" id="chatButton1">
-            <i class="far fa-comment-dots"></i>
+            <i class="far fa-comment-dots fa-3x"></i>
         </button>
-      
+        
     </div>
     <div class="col col-md">
-      <h5>Music Sheet</h5>
-      
+        <span id="musicSheetBox">
+            <button class="musicBoxNumber" id="musicBoxNumber1">
+                1
+            </button>
+            <button class="musicBoxNumber" id="musicBoxNumber2">
+                2
+            </button>
+            <button class="musicBoxNumber" id="musicBoxNumber3">
+                3
+            </button>
+            <button class="musicBoxNumber" id="musicBoxNumber4">
+                4
+            </button>
+        </span>
+        <button class="navBar1Button" id="musicSheetButton1">
+           <i class="fas fa-music fa-3x"></i>
+        </button>
     </div>
     <div class="col col-md">
+        <span id="navBarBox">
+            <button class="navigationBarNumber" id="navigationBarNumber1">
+                1
+            </button>
+            <button class="navigationBarNumber" id="navigationBarNumber2">
+                2
+            </button>
+            <button class="navigationBarNumber" id="navigationBarNumber3">
+                3
+            </button>
+            <button class="navigationBarNumber" id="navigationBarNumber4">
+                4
+            </button>
+        </span>
         <button class="navBar1Button" id="navBarBoxButton1">
-            <i class="fas fa-bars"></i>
+            <i class="fas fa-bars fa-3x"></i>
         </button>
-      
     </div>
   </div>
 </nav>
 
 
     <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        document.getElementById("muteButton1").addEventListener("click", function() {
+
+    // setting up the canvas and one paper tool
+    var canvas = document.getElementById('myCanvas');
+    paper.setup(canvas);
+    var tool = new paper.Tool();
+    
+    var uid = Date.now() % 10000;
+    const map1 = new Map();
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const size = urlParams.get('size');
+    var path = new paper.Path();
+    // used https://www.sitepoint.com/get-url-parameters-with-javascript/ to get these url parameters
+    var currMusicSheet = 1;
+    var currNavBar = 1;
+
+    // getting the URL (you may want to use for Exercise 3)
+    var url = window.location.href;
+
+    var socket = new WebSocket(
+        'ws://' + window.location.host + '/ws/draw');
+
+    tool.onMouseMove = function(event) { //http://paperjs.org/reference/tool/ path examples
+       path.add(event.point);
+       console.log("asd");
+       // You may need to add code here if you want to pass any other information.
+       socket.send("{\"x\" : " + event.point.x + ", \"y\" : " + event.point.y + ", \"uid\" : " + uid + "}" );
+       
+       
+    }
+
+    socket.onmessage = function(receivedMessage) {
+        var received = JSON.parse(receivedMessage.data);
+        console.log("Received: " + JSON.stringify(received));
+        // You will probably want to add some code here to draw more lines.
+        if(size !== 'large') {
+            let str = JSON.stringify(received);
+            let userid = str.substring(str.lastIndexOf(":") + 1, str.length - 1);
+            let p = new paper.Point(parseInt(str.substring(str.indexOf(":") + 1, str.indexOf(","))), parseInt(str.substring(str.indexOf("y") + 3, str.lastIndexOf(","))));
+            if(uid == userid) {
+                if(map1.has(userid)) {
+                map1.get(userid).add(p);
+            } else {
+                var newPath = new paper.Path();
+                newPath.strokeColor = '#' + userid;
+                map1.set(userid, newPath);
+                
+            }  
+            }
+            
+        } else {
+            let str = JSON.stringify(received);
+            let userid = str.substring(str.lastIndexOf(":") + 1, str.length - 1);
+            let p = new paper.Point(parseInt(str.substring(str.indexOf(":") + 1, str.indexOf(","))), parseInt(str.substring(str.indexOf("y") + 3, str.lastIndexOf(","))));
+            
+            if(map1.has(userid)) {
+                map1.get(userid).add(p);
+            } else {
+                var newPath = new paper.Path();
+                newPath.strokeColor = '#' + userid;
+                map1.set(userid, newPath);
+                
+            }  
+        }
+    }
+
+    socket.onclose = function(e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+
+    
+    function changeMusicSheet(number) {
+        let newSheetA = document.getElementById("musicSheet" + number + "A");
+        let currSheetA = document.getElementById("musicSheet" + currMusicSheet + "A");
+        currSheetA.style.display = "none";
+        currSheetB.style.display = "none";
+        newSheetA.style.display = "inline";
+        newSheetB.style.display = "inline";
+        currMusicSheet = number;
+    }
+
+    function changeNavBar(number) {
+        let newNav = document.getElementById("navBar" + number);
+        let currNav = document.getElementById("navBar" + currNavBar);
+        currNav.style.display = "none";
+        newNav.style.display = "inline";
+        
+        currNavBar = number;
+    }
+    
+    function toggleVisibility(id) {
+        let obj = document.getElementById(id);
+        if(obj.style.display === "inline") {
+            obj.style.display = "none";
+        } else {
+            obj.style.display = "inline";
+        }
+    }
+    document.getElementById("muteButton1").addEventListener("click", function() {
         $("#mic").toggleClass('fa-microphone fa-microphone-slash')
     });
     document.getElementById("videoButton1").addEventListener("click", function() {
@@ -177,10 +355,47 @@
         changeNavBar("4");
         toggleVisibility("navBarBox")      
     })
-      
+    document.getElementById("musicBoxNumber1").addEventListener("click", function() {
+        changeMusicSheet("1");
+        toggleVisibility("musicSheetBox");      
+    });
+    document.getElementById("musicBoxNumber2").addEventListener("click", function() {
+        changeMusicSheet("2");
+        toggleVisibility("musicSheetBox");      
+    });
+    document.getElementById("musicBoxNumber3").addEventListener("click", function() {
+        changeMusicSheet("3");
+        toggleVisibility("musicSheetBox");      
+    });
+    document.getElementById("musicBoxNumber4").addEventListener("click", function() {
+        changeMusicSheet("4");
+        toggleVisibility("musicSheetBox");      
+    });
+    document.getElementById("musicSheetButton1").addEventListener("click", function() {
+        toggleVisibility("musicSheetBox");      
+    });
+    document.getElementById("navBarBoxButton1").addEventListener("click", function() {
+        toggleVisibility("navBarBox");      
+    });
+    document.getElementById("musicSheetButton2").addEventListener("click", function() {
+        toggleVisibility("musicSheetBox");      
+    });
+    document.getElementById("navBarBoxButton2").addEventListener("click", function() {
+        toggleVisibility("navBarBox");      
+    });
+    document.getElementById("musicSheetButton3").addEventListener("click", function() {
+        toggleVisibility("musicSheetBox");      
+    });
+    document.getElementById("navBarBoxButton3").addEventListener("click", function() {
+        toggleVisibility("navBarBox");      
+    });
+    document.getElementById("musicSheetButton4").addEventListener("click", function() {
+        toggleVisibility("musicSheetBox");      
+    });
     document.getElementById("navBarBoxButton4").addEventListener("click", function() {
         toggleVisibility("navBarBox");      
     });
+    
     
     </script>
 
