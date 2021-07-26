@@ -9,115 +9,124 @@
     <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
     <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
+    <script src="https://kit.fontawesome.com/f2c150d561.js"
+        crossorigin="anonymous">
+    </script>
+
+
 
     <style type="text/css">
         .maestroLine {
-            height: 10vh;
-            width: 50vw; 
+            height: 90px;
+            width: 300px; 
             background-color: pink;
         }
-
-        .verticalLine {
-            width: .1vw;
-            height: 90vh;
-            background-color: black;
-            float: top;
-            margin-left: 50vw;
-            margin-top: -10vh;
-        }
+        
+        
 
         .redLine {
 
         }
 
+        .musicSheetDiv {
+            overflow: hidden;
+            width: 1200px;
+        }
+
         .musicSheetA {
-            margin-top: -80vh;
+            margin-top: 90px;
+            margin-right: -300px;
             padding-top: 0px;
-            height: 80vh;
-            width: 49vw;
             padding-bottom: 0px;
         }
 
         .musicSheetB {
-            margin-top: -80vh;
+            margin-top: 90px;
             padding-top: 0px;
-            height: 80vh;
-            width: 49vw;
-            margin-left: 51vw;
+        
+            margin-left: 350px;
             padding-bottom: 0px;
         }
 
         #musicSheet1A {
-            visibility: visible;
+            display: inline;
         }
         #musicSheet1B {
-            visibility: visible;
+            display: inline;
         }
 
         #musicSheet2A {
-            visibility: hidden;
+            
+            display: none;
         }
         #musicSheet2B {
-            visibility: hidden;
+            
+            display: none;
         }
 
         #musicSheet3A {
-            visibility: hidden;
+            
+            display: none;
         }
         #musicSheet3B {
-            visibility: hidden;
+            
+            display: none;
         }
 
         #musicSheet4A {
-            visibility: hidden;
+            
+            display: none;
         }
         #musicSheet4B {
-            visibility: hidden;
+            
+            display: none;
         }
 
         .navBar {
-            height:10vh;
+            height:90px;
         }
 
         .navBar1Button {
-            height: 8vh;
-            width: 8vw;
-            margin-left: 2vw;
-            margin-right: 2vw;
+            height: 40px;
+            width: 40px;
+            margin-left: 20px;
+            margin-right: 20px;
         }
         .navBar2Button {
-            height: 8vh;
-            width: 8vw;
-            margin-left: 2vw;
-            margin-right: 2vw;
+            height: 60px;
+            width: 60px;
+            margin-left: 30px;
+            margin-right: 30px;
         }
         .navBar3Button {
-            height: 8vh;
-            width: 8vw;
-            margin-left: 2vw;
-            margin-right: 2vw;
+            height: 40px;
+            width: 40px;
+            margin-left: 25px;
+            margin-right: 25px;
         }
         .navBar4Button {
-            height: 8vh;
-            width: 8vw;
-            margin-left: 2vw;
-            margin-right: 2vw;
+            height: 60px;
+            width: 60px;
+            margin-left: 35px;
+            margin-right: 35px;
         }
 
         #navBarBox {
             position: relative;
-            height: 10vh;
-            width: 12vw;
+            
+            height: 100px;
+            width: 100px;
             background-color: lightblue;
-            visibility: hidden;
+            display: none;
         }
 
         #musicSheetBox {
             position: relative;
-            height: 10vh;
-            width: 12vw;
+            
+            height: 100px;
+            width: 100px;
             background-color: lightblue;
-            visibility: hidden;
+            display: none;
         }
 
         .musicBoxNumber {
@@ -163,8 +172,9 @@
             background-color: lightgreen;
         }
     </style>
-
+    
 </head>
+
 <body>
     <!-- You may change the dimensions of this canvas -->
     <!-- <canvas id="myCanvas" width="750px" height="750px"></canvas> -->
@@ -172,26 +182,43 @@
         Maestro: Hit it!!
     </div>
     <div class="verticalLine"></div>
-    <img class="musicSheetA" id="musicSheet1A" src="https://drive.google.com/uc?export=view&id=1Xr-UWVaiMWkFY6PLuwV-wQ6u_Q3Lmg69">
-    <img class="musicSheetB" id="musicSheet1B" src="https://drive.google.com/uc?export=view&id=1Xr-UWVaiMWkFY6PLuwV-wQ6u_Q3Lmg69">
-    <img class="musicSheetA" id="musicSheet2A" src="https://drive.google.com/uc?export=view&id=17BuSFDEi9pmwbqyrD-QCt2zoKBEwhEh5">
-    <img class="musicSheetB" id="musicSheet2B" src="https://drive.google.com/uc?export=view&id=17BuSFDEi9pmwbqyrD-QCt2zoKBEwhEh5">
-    <img class="musicSheetA" id="musicSheet3A" src="https://drive.google.com/uc?export=view&id=1YjZMBjj3giowRCBx-scdpLXhrzt75Y17">
-    <img class="musicSheetB" id="musicSheet3B" src="https://drive.google.com/uc?export=view&id=1YjZMBjj3giowRCBx-scdpLXhrzt75Y17">
-    <img class="musicSheetA" id="musicSheet4A" src="https://drive.google.com/uc?export=view&id=1MiMuSVoV5TlGnM0_LDLF26HOsnPl5xpC">
-    <img class="musicSheetB" id="musicSheet4B" src="https://drive.google.com/uc?export=view&id=1MiMuSVoV5TlGnM0_LDLF26HOsnPl5xpC">
+    <div class="musicSheetDiv">
+        <img class="musicSheetA" id="musicSheet1A" src="https://drive.google.com/uc?export=view&id=1Xr-UWVaiMWkFY6PLuwV-wQ6u_Q3Lmg69">
+        <img class="musicSheetB" id="musicSheet1B" src="https://drive.google.com/uc?export=view&id=1Xr-UWVaiMWkFY6PLuwV-wQ6u_Q3Lmg69">
+    
+    </div>
+    <div class="musicSheetDiv" >
+        <img class="musicSheetA" id="musicSheet2A" src="https://drive.google.com/uc?export=view&id=17BuSFDEi9pmwbqyrD-QCt2zoKBEwhEh5">
+        <img class="musicSheetB" id="musicSheet2B" src="https://drive.google.com/uc?export=view&id=17BuSFDEi9pmwbqyrD-QCt2zoKBEwhEh5">
+    
+    </div>
+    <div class="musicSheetDiv">
+        <img class="musicSheetA" id="musicSheet3A" src="https://drive.google.com/uc?export=view&id=1YjZMBjj3giowRCBx-scdpLXhrzt75Y17">
+        <img class="musicSheetB" id="musicSheet3B" src="https://drive.google.com/uc?export=view&id=1YjZMBjj3giowRCBx-scdpLXhrzt75Y17">
+    
+    </div>
+    <div class="musicSheetDiv">
+        <img class="musicSheetA" id="musicSheet4A" src="https://drive.google.com/uc?export=view&id=1MiMuSVoV5TlGnM0_LDLF26HOsnPl5xpC">
+        <img class="musicSheetB" id="musicSheet4B" src="https://drive.google.com/uc?export=view&id=1MiMuSVoV5TlGnM0_LDLF26HOsnPl5xpC">
+
+    </div>
+    
+    
 
     <hr>
     
+    
     <div class="navBar1">
         <button class="navBar1Button" id="muteButton1">
+            <i class="fas fa-microphone" id="mic"></i>
+            
 
         </button>
         <button class="navBar1Button" id="videoButton1">
-            
+            <i class="fas fa-video" id="vid"></i>
         </button>
         <button class="navBar1Button" id="chatButton1">
-            
+            <i class="far fa-comment-dots"></i>
         </button>
         <span id="musicSheetBox">
             <button class="musicBoxNumber" id="musicBoxNumber1">
@@ -208,7 +235,7 @@
             </button>
         </span>
         <button class="navBar1Button" id="musicSheetButton1">
-           
+           <i class="fas fa-music"></i>
         </button>
         <span id="navBarBox">
             <button class="navigationBarNumber" id="navigationBarNumber1">
@@ -225,7 +252,7 @@
             </button>
         </span>
         <button class="navBar1Button" id="navBarBoxButton1">
-            
+            <i class="fas fa-bars"></i>
         </button>
     </div>
     
@@ -302,35 +329,44 @@
     socket.onclose = function(e) {
         console.error('Chat socket closed unexpectedly');
     };
+
+    
     function changeMusicSheet(number) {
         let newSheetA = document.getElementById("musicSheet" + number + "A");
         let newSheetB = document.getElementById("musicSheet" + number + "B");
         let currSheetA = document.getElementById("musicSheet" + currMusicSheet + "A");
         let currSheetB = document.getElementById("musicSheet" + currMusicSheet + "B");
-        currSheetA.style.visibility = "hidden";
-        currSheetB.style.visibility = "hidden";
-        newSheetA.style.visibility = "visible";
-        newSheetB.style.visibility = "visible";
+        currSheetA.style.display = "none";
+        currSheetB.style.display = "none";
+        newSheetA.style.display = "inline";
+        newSheetB.style.display = "inline";
         currMusicSheet = number;
     }
 
     function changeNavBar(number) {
         let newNav = document.getElementById("navBar" + number);
         let currNav = document.getElementById("navBar" + currNavBar);
-        currNav.style.visibility = "hidden";
-        newNav.style.visibility = "visible";
+        currNav.style.display = "none";
+        newNav.style.display = "inline";
         
         currNavBar = number;
     }
-
+    
     function toggleVisibility(id) {
         let obj = document.getElementById(id);
-        if(obj.style.visibility === "visible") {
-            obj.style.visibility = "hidden";
+        if(obj.style.display === "inline") {
+            obj.style.display = "none";
         } else {
-            obj.style.visibility = "visible";
+            obj.style.display = "inline";
         }
     }
+    document.getElementById("muteButton1").addEventListener("click", function() {
+        $("#mic").toggleClass('fa-microphone fa-microphone-slash')
+    });
+    document.getElementById("videoButton1").addEventListener("click", function() {
+        $("#vid").toggleClass('fa-video fa-video-slash')
+    });
+    
     document.getElementById("navigationBarNumber1").addEventListener("click", function() {
         changeNavBar("1");
         toggleVisibility("navBarBox")      
@@ -387,6 +423,7 @@
     document.getElementById("navBarBoxButton4").addEventListener("click", function() {
         toggleVisibility("navBarBox");      
     });
+    
 
 </script>
 </html>
