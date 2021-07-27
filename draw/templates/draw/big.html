@@ -143,16 +143,16 @@
         }
 
         #video1 {
-            display: none;
+            visibility: hidden;
         }
         #video2 {
-            display: none;
+            visibility: hidden;
         }
         #video3 {
-            display: none;
+            visibility: hidden;
         }
         #video4 {
-            display: none;
+            visibility: hidden;
         }
 
         
@@ -193,10 +193,10 @@
             
             
         </div>
-        <img id="video1" class="happy" style="position: relative; left: -150px; top: 110px;" src="https://drive.google.com/uc?export=view&id=1p67VmLjpYNqvx7X99ZE8CZTh2z0xzg6B">
-        <img id="video2" class="happy" style="position: relative; left: -221px; top: 720px;" src="https://drive.google.com/uc?export=view&id=1p67VmLjpYNqvx7X99ZE8CZTh2z0xzg6B">
-        <img id="video3" class="happy" style="position: relative; left: -901px; top: 575px;" src="https://drive.google.com/uc?export=view&id=1p67VmLjpYNqvx7X99ZE8CZTh2z0xzg6B">
-        <img id="video4" class="happy" style="position: relative; left: -1371px; top: 745px;"src="https://drive.google.com/uc?export=view&id=1p67VmLjpYNqvx7X99ZE8CZTh2z0xzg6B">
+        <img id="video1" class="happy" style="position: relative; left: -150px; top: 110px; display: inline" src="https://drive.google.com/uc?export=view&id=1p67VmLjpYNqvx7X99ZE8CZTh2z0xzg6B">
+        <img id="video2" class="happy" style="position: relative; left: -221px; top: 720px; display: inline" src="https://drive.google.com/uc?export=view&id=1p67VmLjpYNqvx7X99ZE8CZTh2z0xzg6B">
+        <img id="video3" class="happy" style="position: relative; left: -901px; top: 575px; display: inline" src="https://drive.google.com/uc?export=view&id=1p67VmLjpYNqvx7X99ZE8CZTh2z0xzg6B">
+        <img id="video4" class="happy" style="position: relative; left: -1371px; top: 745px; display: inline"src="https://drive.google.com/uc?export=view&id=1p67VmLjpYNqvx7X99ZE8CZTh2z0xzg6B">
     </div>
     
 </div>
@@ -259,10 +259,10 @@
         if(received.substring(0, 12) === "toggle video") {
             let videoNumber = received.substring(13);
             if(map1.has(videoNumber)) {
-                toggleVisibility("video" + map1.get(videoNumber));
+                toggleVis("video" + map1.get(videoNumber));
             } else {
                 map1.set(videoNumber, map1.size + 1);
-                toggleVisibility("video" + map1.get(videoNumber));
+                toggleVis("video" + map1.get(videoNumber));
             }
             
             console.log(videoNumber);
@@ -307,6 +307,14 @@
             obj.style.display = "inline";
         }
     }
+    function toggleVis(id) {
+        let obj = document.getElementById(id);
+        if(obj.style.visibility === "visible") {
+            obj.style.visibility = "hidden";
+        } else {
+            obj.style.visibility = "visible";
+        }
+    }
     
     document.getElementById("chatButton1").addEventListener("click", function() {
         toggleVisibility("message1");      
@@ -317,33 +325,7 @@
         document.getElementById("chatInput1").value="";
         toggleVisibility("message1");      
     });
-    document.getElementById("chatButton2").addEventListener("click", function() {
-        toggleVisibility("message2");      
-    });
-    document.getElementById("chatSubmit2").addEventListener("click", function() {
-        socket.send(document.getElementById("chatInput2").value);
-        console.log(document.getElementById("chatInput2").value)
-        document.getElementById("chatInput2").value="";
-        toggleVisibility("message2");      
-    });
-    document.getElementById("chatButton3").addEventListener("click", function() {
-        toggleVisibility("message3");      
-    });
-    document.getElementById("chatSubmit3").addEventListener("click", function() {
-        socket.send(document.getElementById("chatInput3").value);
-        console.log(document.getElementById("chatInput3").value)
-        document.getElementById("chatInput3").value="";
-        toggleVisibility("message3");      
-    });
-    document.getElementById("chatButton4").addEventListener("click", function() {
-        toggleVisibility("message4");      
-    });
-    document.getElementById("chatSubmit4").addEventListener("click", function() {
-        socket.send(document.getElementById("chatInput4").value);
-        console.log(document.getElementById("chatInput4").value)
-        document.getElementById("chatInput4").value="";
-        toggleVisibility("message4");      
-    });
+    
     
     </script>
 
