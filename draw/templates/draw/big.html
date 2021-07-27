@@ -44,8 +44,13 @@
         .maestroLine {
             height: 90px;
             background-color: pink;
-            font-size:xx-large;
-            text-align:center;
+            
+            text-align: center;
+            
+            
+            font-family: Didot;
+            font-size: 180px;
+        
         }
         .redLine {
 
@@ -57,6 +62,12 @@
 
         .musicSheetA {
             
+        }
+
+        .happy {
+            display: none;
+            width: 80px;
+            height: 80px;
         }
 
         #musicSheet1A {
@@ -131,6 +142,19 @@
             display: none;
         }
 
+        #video1 {
+            display: none;
+        }
+        #video2 {
+            display: none;
+        }
+        #video3 {
+            display: none;
+        }
+        #video4 {
+            display: none;
+        }
+
         
     </style>
 
@@ -141,11 +165,21 @@
     
 <header class="site-header text-center sticky-top py-1 ">
     <div class="row text-center fw-bold">
-        <div class="col text-center maestroLine container flex-column flex-md-row justify-content-between ">
-            <h1 class="text-center fw-bold">Maestro: Hit it!!</h1>
+        
+        <div class="col text-center maestroLine container flex-column flex-md-row justify-content-between" style="font-size: 80px">
+            <h1 class="text-center fw-bold" id="maestroMessage" style="font-size: 72px"> Maestro: Hit it!!</h1>
+            
         </div>
     </div>
 </header>
+<button class="navBar1Button" id="chatButton1">
+    <i class="fas fa-comment-dots fa-3x" id="chat"></i>
+
+</button>
+<span class="message" id="message1" style="display: none">
+    <input type="text" id="chatInput1" style="height:80px; width: 400px; font-size: 60px">
+    <input type="submit" id="chatSubmit1" style="font-size: 48px">
+</span>
 
 <main>
 
@@ -153,24 +187,18 @@
     <img class="musicSheetA" id="musicSheet1A" style="width:1420px" height="1350px" src="https://drive.google.com/uc?export=view&id=1Xr-UWVaiMWkFY6PLuwV-wQ6u_Q3Lmg69">
     <div>
         <img id="orchestraLayout1B" style="width:1420px" height="1000px" src="https://drive.google.com/uc?export=view&id=17Wzq-wM1YYbarf1HAn0kS6ORLvcb-cUh">
-        <div class="row">
-            <div class="col"> <span class="border align-self-center border-dark"> video </span>
-            </div>
-            <div class="col"> <span class="border border-dark"> video </span>
-            </div>
-            <div class="col"> <span class="border border-dark"> video </span>
-            </div>
-            <div class="col"> <span class="border border-dark"> video </span>
-            </div>
-            <div class="col"> <span class="border border-dark"> video </span>
-            </div>
-            <div class="col"> <span class="border border-dark"> video </span>
-            </div>
-            <div class="col"> <span class="border border-dark"> video </span>
-            </div>
-        </div>
+       
         
+            
+            
+            
+        </div>
+        <img id="video1" class="happy" style="position: relative; left: -150px; top: 110px;" src="https://drive.google.com/uc?export=view&id=1p67VmLjpYNqvx7X99ZE8CZTh2z0xzg6B">
+        <img id="video2" class="happy" style="position: relative; left: -221px; top: 720px;" src="https://drive.google.com/uc?export=view&id=1p67VmLjpYNqvx7X99ZE8CZTh2z0xzg6B">
+        <img id="video3" class="happy" style="position: relative; left: -901px; top: 575px;" src="https://drive.google.com/uc?export=view&id=1p67VmLjpYNqvx7X99ZE8CZTh2z0xzg6B">
+        <img id="video4" class="happy" style="position: relative; left: -1371px; top: 745px;"src="https://drive.google.com/uc?export=view&id=1p67VmLjpYNqvx7X99ZE8CZTh2z0xzg6B">
     </div>
+    
 </div>
 <div class="half " style="display:flex">
     <img class="musicSheetA" id="musicSheet2A" style="width:1420px" height="1350px" src="https://drive.google.com/uc?export=view&id=17BuSFDEi9pmwbqyrD-QCt2zoKBEwhEh5">
@@ -189,46 +217,7 @@
 </div>
 </main>
 
-<nav class="container">
-  <div class="row">
-    <div class="col col-md">
-        <button class="navBar1Button" id="muteButton1">
-            <i class="fas fa-microphone fa-3x"  id="mic"></i>
-        </button>
-    </div>
-    <div class="col col-md">
-        <button class="navBar1Button" id="videoButton1">
-            <i class="fas fa-video fa-3x" id="vid"></i>
-        </button>
-      
-    </div>
-    <div class="col col-md">
-        <button class="navBar1Button" id="chatButton1">
-            <i class="fas fa-comment-dots fa-3x" id="chat"></i>
-        </button>
-        
-    </div>
-    <div class="col col-md">
-        <span id="musicSheetBox">
-            <button class="musicBoxNumber" id="musicBoxNumber1">
-                1
-            </button>
-            <button class="musicBoxNumber" id="musicBoxNumber2">
-                2
-            </button>
-            <button class="musicBoxNumber" id="musicBoxNumber3">
-                3
-            </button>
-            <button class="musicBoxNumber" id="musicBoxNumber4">
-                4
-            </button>
-        </span>
-        <button class="navBar1Button" id="musicSheetButton1">
-           <i class="fas fa-music fa-3x"></i>
-        </button>
-    </div>
-  </div>
-</nav>
+
 
 
     <script>
@@ -264,37 +253,23 @@
     }
 
     socket.onmessage = function(receivedMessage) {
-        var received = JSON.parse(receivedMessage.data);
-        console.log("Received: " + JSON.stringify(received));
+        received = receivedMessage.data;
+        console.log("Received: " + receivedMessage.data);
         // You will probably want to add some code here to draw more lines.
-        if(size !== 'large') {
-            let str = JSON.stringify(received);
-            let userid = str.substring(str.lastIndexOf(":") + 1, str.length - 1);
-            let p = new paper.Point(parseInt(str.substring(str.indexOf(":") + 1, str.indexOf(","))), parseInt(str.substring(str.indexOf("y") + 3, str.lastIndexOf(","))));
-            if(uid == userid) {
-                if(map1.has(userid)) {
-                map1.get(userid).add(p);
+        if(received.substring(0, 12) === "toggle video") {
+            let videoNumber = received.substring(13);
+            if(map1.has(videoNumber)) {
+                toggleVisibility("video" + map1.get(videoNumber));
             } else {
-                var newPath = new paper.Path();
-                newPath.strokeColor = '#' + userid;
-                map1.set(userid, newPath);
-                
-            }  
+                map1.set(videoNumber, map1.size + 1);
+                toggleVisibility("video" + map1.get(videoNumber));
             }
             
-        } else {
-            let str = JSON.stringify(received);
-            let userid = str.substring(str.lastIndexOf(":") + 1, str.length - 1);
-            let p = new paper.Point(parseInt(str.substring(str.indexOf(":") + 1, str.indexOf(","))), parseInt(str.substring(str.indexOf("y") + 3, str.lastIndexOf(","))));
-            
-            if(map1.has(userid)) {
-                map1.get(userid).add(p);
-            } else {
-                var newPath = new paper.Path();
-                newPath.strokeColor = '#' + userid;
-                map1.set(userid, newPath);
-                
-            }  
+            console.log(videoNumber);
+        }
+        if(received.substring(0, 7) === "Maestro") {
+            console.log("ads");
+            document.getElementById("maestroMessage").innerHTML = received;
         }
     }
 
@@ -332,72 +307,44 @@
             obj.style.display = "inline";
         }
     }
-    document.getElementById("muteButton1").addEventListener("click", function() {
-        $("#mic").toggleClass('fa-microphone fa-microphone-slash')
-    });
-    document.getElementById("videoButton1").addEventListener("click", function() {
-        $("#vid").toggleClass('fa-video fa-video-slash')
-    });
+    
     document.getElementById("chatButton1").addEventListener("click", function() {
-        $("#chat").toggleClass('fa-comment-dots fa-comment-slash')
+        toggleVisibility("message1");      
+    });
+    document.getElementById("chatSubmit1").addEventListener("click", function() {
+        socket.send("Maestro: " + document.getElementById("chatInput1").value);
+        console.log(document.getElementById("chatInput1").value)
+        document.getElementById("chatInput1").value="";
+        toggleVisibility("message1");      
+    });
+    document.getElementById("chatButton2").addEventListener("click", function() {
+        toggleVisibility("message2");      
+    });
+    document.getElementById("chatSubmit2").addEventListener("click", function() {
+        socket.send(document.getElementById("chatInput2").value);
+        console.log(document.getElementById("chatInput2").value)
+        document.getElementById("chatInput2").value="";
+        toggleVisibility("message2");      
+    });
+    document.getElementById("chatButton3").addEventListener("click", function() {
+        toggleVisibility("message3");      
+    });
+    document.getElementById("chatSubmit3").addEventListener("click", function() {
+        socket.send(document.getElementById("chatInput3").value);
+        console.log(document.getElementById("chatInput3").value)
+        document.getElementById("chatInput3").value="";
+        toggleVisibility("message3");      
+    });
+    document.getElementById("chatButton4").addEventListener("click", function() {
+        toggleVisibility("message4");      
+    });
+    document.getElementById("chatSubmit4").addEventListener("click", function() {
+        socket.send(document.getElementById("chatInput4").value);
+        console.log(document.getElementById("chatInput4").value)
+        document.getElementById("chatInput4").value="";
+        toggleVisibility("message4");      
     });
     
-    document.getElementById("navigationBarNumber1").addEventListener("click", function() {
-        changeNavBar("1");
-        toggleVisibility("navBarBox")      
-    });
-    document.getElementById("navigationBarNumber2").addEventListener("click", function() {
-        changeNavBar("2");
-        toggleVisibility("navBarBox")      
-    });
-    document.getElementById("navigationBarNumber3").addEventListener("click", function() {
-        changeNavBar("3");
-        toggleVisibility("navBarBox")      
-    });
-    document.getElementById("navigationBarNumber4").addEventListener("click", function() {
-        changeNavBar("4");
-        toggleVisibility("navBarBox")      
-    })
-    document.getElementById("musicBoxNumber1").addEventListener("click", function() {
-        changeMusicSheet("1");
-        toggleVisibility("musicSheetBox");      
-    });
-    document.getElementById("musicBoxNumber2").addEventListener("click", function() {
-        changeMusicSheet("2");
-        toggleVisibility("musicSheetBox");      
-    });
-    document.getElementById("musicBoxNumber3").addEventListener("click", function() {
-        changeMusicSheet("3");
-        toggleVisibility("musicSheetBox");      
-    });
-    document.getElementById("musicBoxNumber4").addEventListener("click", function() {
-        changeMusicSheet("4");
-        toggleVisibility("musicSheetBox");      
-    });
-    document.getElementById("musicSheetButton1").addEventListener("click", function() {
-        toggleVisibility("musicSheetBox");      
-    });
-    document.getElementById("navBarBoxButton1").addEventListener("click", function() {
-        toggleVisibility("navBarBox");      
-    });
-    document.getElementById("musicSheetButton2").addEventListener("click", function() {
-        toggleVisibility("musicSheetBox");      
-    });
-    document.getElementById("navBarBoxButton2").addEventListener("click", function() {
-        toggleVisibility("navBarBox");      
-    });
-    document.getElementById("musicSheetButton3").addEventListener("click", function() {
-        toggleVisibility("musicSheetBox");      
-    });
-    document.getElementById("navBarBoxButton3").addEventListener("click", function() {
-        toggleVisibility("navBarBox");      
-    });
-    document.getElementById("musicSheetButton4").addEventListener("click", function() {
-        toggleVisibility("musicSheetBox");      
-    });
-    document.getElementById("navBarBoxButton4").addEventListener("click", function() {
-        toggleVisibility("navBarBox");      
-    });
     </script>
 
       
