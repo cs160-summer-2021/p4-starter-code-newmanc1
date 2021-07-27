@@ -45,6 +45,7 @@
             height: 90px;
             background-color: pink;
             font-size:xx-large;
+            text-align:center;
         }
         .redLine {
 
@@ -138,35 +139,51 @@
   </head>
   <body>
     
-<header class="site-header sticky-top py-1">
-    <div class="row">
-        <div class="col maestroLine container d-flex flex-column flex-md-row justify-content-between">
-            Maestro: Hit it!!
-        </div>
-        <div class="col bg-dark container d-flex flex-column flex-md-row justify-content-between">
-            Some sync feature
+<header class="site-header text-center sticky-top py-1 ">
+    <div class="row text-center fw-bold">
+        <div class="col text-center maestroLine container flex-column flex-md-row justify-content-between ">
+            <h1 class="text-center fw-bold">Maestro: Hit it!!</h1>
         </div>
     </div>
-  
 </header>
 
 <main>
 
 <div class="half " style="display:flex">
     <img class="musicSheetA" id="musicSheet1A" style="width:1420px" height="1350px" src="https://drive.google.com/uc?export=view&id=1Xr-UWVaiMWkFY6PLuwV-wQ6u_Q3Lmg69">
-    <img id="orchestraLayout1B" style="width:1420px" height="1350px" src="https://drive.google.com/uc?export=view&id=1JW3hFmy5foT7eVsXVdCSYY_1G5UFwlSO">
+    <div>
+        <img id="orchestraLayout1B" style="width:1420px" height="1000px" src="https://drive.google.com/uc?export=view&id=17Wzq-wM1YYbarf1HAn0kS6ORLvcb-cUh">
+        <div class="row">
+            <div class="col"> video<span class="border border-primary"></span>
+            </div>
+            <div class="col"> video<span class="border border-primary"></span>
+            </div>
+            <div class="col"> video<span class="border border-primary"></span>
+            </div>
+            <div class="col"> video<span class="border border-primary"></span>
+            </div>
+            <div class="col"> video<span class="border border-primary"></span>
+            </div>
+            <div class="col"> video<span class="border border-primary"></span>
+            </div>
+        </div>
+        
+    </div>
 </div>
 <div class="half " style="display:flex">
     <img class="musicSheetA" id="musicSheet2A" style="width:1420px" height="1350px" src="https://drive.google.com/uc?export=view&id=17BuSFDEi9pmwbqyrD-QCt2zoKBEwhEh5">
-    <img id="orchestraLayout2B" style="width:1420px" height="1350px" src="https://drive.google.com/uc?export=view&id=1JW3hFmy5foT7eVsXVdCSYY_1G5UFwlSO">
+    <img id="orchestraLayout2B" style="width:1420px" height="1000px" src="https://drive.google.com/uc?export=view&id=17Wzq-wM1YYbarf1HAn0kS6ORLvcb-cUh">
 </div>
 <div class="half " style="display:flex">
     <img class="musicSheetA" id="musicSheet3A" style="width:1420px" height="1350px" src="https://drive.google.com/uc?export=view&id=1YjZMBjj3giowRCBx-scdpLXhrzt75Y17">
-    <img id="orchestraLayout3B" style="width:1420px" height="1350px" src="https://drive.google.com/uc?export=view&id=1JW3hFmy5foT7eVsXVdCSYY_1G5UFwlSO">
+    <img id="orchestraLayout3B" style="width:1420px" height="1000px" src="https://drive.google.com/uc?export=view&id=17Wzq-wM1YYbarf1HAn0kS6ORLvcb-cUh">
 </div>
 <div class="half " style="display:flex">
     <img class="musicSheetA" id="musicSheet4A" style="width:1420px" height="1350px" src="https://drive.google.com/uc?export=view&id=1MiMuSVoV5TlGnM0_LDLF26HOsnPl5xpC">
-    <img id="orchestraLayout4B" style="width:1420px" height="1350px" src="https://drive.google.com/uc?export=view&id=1JW3hFmy5foT7eVsXVdCSYY_1G5UFwlSO">
+    <img id="orchestraLayout4B" style="width:1420px" height="1000px" src="https://drive.google.com/uc?export=view&id=17Wzq-wM1YYbarf1HAn0kS6ORLvcb-cUh">
+</div>
+<div class="half " style="display:flex">
+    
 </div>
 </main>
 
@@ -206,25 +223,6 @@
         </span>
         <button class="navBar1Button" id="musicSheetButton1">
            <i class="fas fa-music fa-3x"></i>
-        </button>
-    </div>
-    <div class="col col-md">
-        <span id="navBarBox">
-            <button class="navigationBarNumber" id="navigationBarNumber1">
-                1
-            </button>
-            <button class="navigationBarNumber" id="navigationBarNumber2">
-                2
-            </button>
-            <button class="navigationBarNumber" id="navigationBarNumber3">
-                3
-            </button>
-            <button class="navigationBarNumber" id="navigationBarNumber4">
-                4
-            </button>
-        </span>
-        <button class="navBar1Button" id="navBarBoxButton1">
-            <i class="fas fa-bars fa-3x"></i>
         </button>
     </div>
   </div>
